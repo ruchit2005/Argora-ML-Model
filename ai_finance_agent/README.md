@@ -34,18 +34,32 @@ cd ai_finance_agent
 pip install -r requirements.txt
 ```
 
-2. **Set Environment Variables**:
-Create a `.env` file with your API keys:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key_here
-NEWS_API_KEY=your_news_api_key_here
+2. **Configure API Keys**:
+```bash
+# Copy the template configuration
+cp config_template.py config.py
+
+# Edit config.py with your API keys
+# Get API keys from:
+# - OpenAI: https://platform.openai.com/api-keys
+# - Alpha Vantage: https://www.alphavantage.co/support/#api-key
+# - News API: https://newsapi.org/register
 ```
 
 3. **Run the Server**:
 ```bash
 python main.py
+# Or use the run script
+python run_server.py
 ```
+
+The server will start on `http://localhost:8000`
+
+## Security Note
+
+- **config.py** contains your API keys and is excluded from git for security
+- **config_template.py** shows the required configuration structure
+- Never commit actual API keys to version control
 
 ## API Endpoints
 
